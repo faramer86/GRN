@@ -21,12 +21,14 @@ This allows them to bind to regulatory elements in adjacent to gene regions (cis
 Depending on type of the interaction (activation/repression) there are can be several outcomes.
 If TF binds to enchancer region, gene expression increase.
 Opposite to that, if protein binds to silencer region then gene decrease its expression.
-Also there can be more complicated types of interaction. 
-For example protein could be insulator, enhancer-blocker or a barrier.
-As a result most of the processes during development can be seen as complex network with lots of different gene-protein interactions.
+Moreover transcription factors may also recruit chromatin remodelers and histone modifiers.
+Also there can be more complicated types of interaction and complex GRNs can be composed of genes, noncoding RNAs, proteins, metabolites, and signaling components. 
+As a result most of the processes during development can be seen as complex network with lots of different interactions.
 Such networks usually illustrated using graphs.  
-Nodes shows genes, TFs or signal molecules, edges illustrate types of interaction.
+Vertices show genes, TFs or signal molecules, edges illustrate types of interaction.
 Such graphs in some cases reach vary big complexity.
+Therefore such networks are studied by systems biology.
+Only systems approach allows one to undersytand, not only separate components, but also process as a whole and reveal emergent properties of a system.  
 As a consequense arise a questions: how can we reconstruct such networks? 
 What kind of data should we use? 
 And what are the potencial outcomes from reasearch of such gene interactions?
@@ -52,13 +54,13 @@ This common patterns called \textbf{\textit{network motifs}}.
 It is recurring circuits of interactions from which the gene networks are built.
 Also usually GRNs have hierarchical structure \cite{Erwin2009}.
 It means that those genes that control the initial stages of development are at the top of the hierarchy and those genes that execute the detailed functions of cell differentiation are at the periphery.
-Consequently, changes in upstream genes have far larger effect than in downstream.
-For example changes in gap genes in early development of \textit{Drosofila melanogaster} have more impact on final body plan than changes in genes which regulate eyes pigmentation.
+Consequently, changes in upstream genes have far larger effect on the final body plan than in downstream.
+For example changes in gap genes in early development of \textit{Drosofila melanogaster} are more crutial for the develpment than changes in genes which regulate eyes pigmentation.
 There are lots of others similarities.
 But at the same time developmental GRNs have their own characteristic features.
 
 First of all, they tend to have longer cascades than some other GRNs.
-It can be explained by the role of this cascades.
+It can be explained by the role of pathways.
 Often they require transduce signal through the whole process of development, through lots of cell generations.
 That is why timescale of such process is very slow.
 Sometimes it is one cell generation at each cascade step.
@@ -109,17 +111,31 @@ In order to build GRN related to any development process we need to answer the f
 
 \vspace{2mm}
 
-We can distinguish two main approaches in building GRN. First is exprimental approch. In this way we predominantly operate experimental data (microarrays, qPCR, hybridization \textit{in situ}, morphology etc). Second is computation approach where modeling of GRN is based on some descriptive and mathematical models using already generated data. In this review we will concentrate on first approach. In subsequent literature reviews we will cover second approach.
+We can distinguish two main approaches in building GRN. 
+First is exprimental approch. In this way we predominantly operate experimental data (microarrays, qPCR, hybridization \textit{in situ}, morphology etc). 
+Second is computation approach where modeling of GRN is based on some descriptive and mathematical models using already generated data. 
+In this review we will concentrate on first approach. In subsequent literature reviews we will cover second approach.
 
 \subsection*{Regulatory genes identification}
 
 The first step in building GRNs is regulatory genes identification.
 If complete genome of the organism is available, than the best way is  genome-wide survey with identification of all predicted regultory genes.
-Regulatory genes predominantly very conserved.
+RGs predominantly are very conserved.
 Therefore, transcription factors and signal molecules encoded by the regulatory genome can be identified by sequence-based homology searching using BLAST. 
 Also DNA-binding motifs can help identify potencial TF.
-The next step after identification of the majority of regulatory genes is to revel when and where this genes are expressed.
+The next step after identification of the majority of regulatory genes is functional annotation of every gene.
+Most likely, most of them will be identified.
+If not, the best way is to use mutant resources.
+They include information about chemically induced mutants, ectopic expression, and gene silencing.
+Use external data and papers in order to reveal problem genes.
 
+
+Phylogenetic conservation.
+
+ Researchers have identified
+potential cis-regulatory sequences in many or-
+ganisms by searching for evolutionary con-
+servation
 
 \begin{table}
 	\makebox[\textwidth]{%
@@ -176,10 +192,11 @@ The next step after identification of the majority of regulatory genes is to rev
 
 \subsection*{Temporal expression}
 
-At this stage, we encounter several problems.
+After regulatory genes identification we have to characterise temporal properties of gene expression during studied process.
+And at this stage, we encounter several problems.
 Develppment is a longitudional event which takes lots of time.
 Also it is highly dynamic serial event.
-Thus, researcher have to chracterise this great multitude of RGs in different stages or conditions.
+Thus, researcher have to chracterise this great multitude of regulatory genes (RGs) in different stages or conditions.
 It is not a trivial task.
 For this often use several methods:
 
@@ -187,9 +204,29 @@ For this often use several methods:
 
 1) Microarrays
 
-2) qPCR 
+\vspace{2mm}
 
-3) NanoString 
+Microarray technology has revolutionized our ability to monitor the output of transcriptional regulation at the level of the whole genome.
+These expression analyses have been further refined by our ability to monitor expression, at high resolution, within individual cell types, tissues, and organs; at different developmental time points; in different mutant backgrounds;
+and in response to hormones and various stress conditions.
+
+cell sorting
+
+(GFP)-marked
+
+\vspace{2mm}
+
+2) RNA-sq
+
+\vspace{2mm}
+
+
+
+\vspace{2mm}
+
+3) qPCR 
+
+4) NanoString 
 
 \vspace{2mm}
 
@@ -205,7 +242,81 @@ Mapping regulatory gene expression to various territorial domains is essential f
 
 \subsection*{Linkages}
 
-\subsection*{Validation}
+protein-protein
+
+However, the
+most commonly used methods for protein in-
+teraction are yeast-two-hybrid assays and affin-
+ity purification of tagged protein complexes
+followed by mass spectrometry (AP-MS).
+Tandem affinity purification (TAP) of tagged
+proteins coupled to mass spectrometry has
+been used to study the cell cycle interactome
+in Arabidopsis cell culture and protein kinase
+interactions in rice (Rohila et al. 2006, Van
+Leene et al. 2007). Protein microarrays can also
+identify protein-protein interactions in a high-
+throughput manner. Popescu et al. (2007) used
+a high-density protein array to detect interac-
+tions between Arabidopsis calmodulins and other
+plant proteins (Popescu et al. 2007). In addition,
+new techniques such as fluorescence resonance
+energy transfer (FRET) and bioluminescence
+resonance energy transfer (BRET) are being
+used in plants to visualize protein-protein in-
+teractions in vivo (Xu et al. 2007, Zelazny et al.
+2007).
+
+dna-protein
+
+yeast-one-hybrid system
+
+ this method
+should greatly facilitate the identification of
+protein-DNA interactions in plants.
+Chromatin immunoprecipitation (ChIP)
+coupled with quantitative real-time PCR
+is another technique that plant researchers
+are increasingly employing. This technique
+allows one to isolate proteins bound to target
+chromatin
+
+ ChIP has been
+used to validate putative downstream targets
+of DELLA proteins, transcriptional regulators
+that control many aspects of signaling by the
+plant hormone gibberellin (Zentella et al.
+2007). The technique has also been used
+to validate a physical interaction 
+
+epigenetic modification
+
+The evidence suggests
+that a complex network of epigenetic mecha-
+nisms acts to regulate gene expression
+
+Metabolite profiling. Obtaining data from
+the transcriptome, its epigenetic modifications,
+and the proteome provides the pieces that
+can then be assembled into a model of tran-
+scriptional regulatory networks. However, re-
+searchers are assembling one other large data
+source that, in part, can represent the terminal
+output of transcriptional regulation. The iden-
+tification of small-molecule metabolites can
+provide a direct link to a cell’s physiology and,
+in some cases, signaling networks. 
+ These metabolites are important in
+the differentiation of tissues and organs and in
+the responses of plants to the environment. In
+some cases, metabolites act in signaling cas-
+cades that influence transcriptional networks.
+
+\subsection*{Modeling}
+
+1) Boolean network
+
+2) Bayesian networks
 
 \subsection*{Visualisation}
 
@@ -213,6 +324,21 @@ Mapping regulatory gene expression to various territorial domains is essential f
 
 
 Therefore research of such a complex regulatory systems can shed more light on developmenatal processes and help in the curing of molecular genetic diseases associated with the violation of the networks.
+
+Also such GRNs play a crucial role in evolution.
+They can buffer gene expression variation and stabilizes phenotypes while adaptation permanently changes them.
+
+ An outstanding
+challenge for both systems biology and evolutionary biology is
+understanding the molecular mechanisms that allow development
+to buffer phenotypes while retaining flexibility
+
+Transcription factors, the chro-
+matin landscape, and signaling
+pathways act together to regu-
+late gene expression during cell
+development
+
 
 \bibliographystyle{abbrv}
 \bibliography{references}
